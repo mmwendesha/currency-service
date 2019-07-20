@@ -17,6 +17,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<spring-cloud.version>Greenwich.SR2</spring-cloud.version>
 		<!-- TO FIX Maven Unknown Error. Do Maven project update after adding this. -->
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
@@ -55,6 +56,11 @@
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -91,4 +97,15 @@
 		</plugins>
 	</build>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Greenwich.SR2</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
